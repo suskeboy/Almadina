@@ -1,0 +1,12 @@
+@import '../configs/variables';
+
+/**
+* Background Image
+*/
+.bg-image {
+  background-image: linear-gradient(to right bottom, rgba($color-primary, .5)),
+  url(remote-home.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

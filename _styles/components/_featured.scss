@@ -1,0 +1,25 @@
+.featured {
+
+  &__title,
+  &__sub-title {
+    color: $white;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 3.375em;
+   
+    @include respond(desktop) {
+     font-size: 5.064em;
+    }
+  }
+   
+  &__sub-title {
+    font-size: 2em;
+    margin-bottom: 1em !important;
+    
+    @include respond(desktop) {
+     font-size: 3.375em;
+    }
+  }
+}

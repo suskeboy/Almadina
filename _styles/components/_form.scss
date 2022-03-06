@@ -1,0 +1,166 @@
+@import '../configs/variables';
+@import '../configs/mixins';
+
+$field-padding: 10px;
+
+/**
+* General form basic style
+*
+*/
+.form {
+  margin-bottom: $scale;
+
+  &__group {
+    margin-bottom: $scale;
+  }
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+// Legend, have for accessability purpose for the title of the form, but not showing it
+legend {
+  @include visuallyhidden;
+}
+
+fieldset {
+  border : $gray-border;
+  border-radius: $border-radius-medium;
+  margin : 0;
+  padding: $scale;
+}
+
+input,
+textarea, 
+select {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border: $gray-border;
+  border-radius: $border-radius-small;
+  background-color: $white;
+  color: $black;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all .3s;
+ 
+  &:focus {
+    outline: none;
+    border-color: $gray-dark; 
+    box-shadow: $box-shadow-medium;
+  }
+}
+
+input, 
+select {
+  height: $button-and-form-field-height-medium;
+  padding: 0 $field-padding;
+  vertical-align: middle; /* This is optional but it makes legacy IEs look better */
+}
+
+// Reseting the width of the following input types
+input[type="checkbox"],
+input[type="radio"],
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  width: auto;
+  box-shadow: none;
+}
+
+input[type="search"] {
+-webkit-appearance: none;
+}
+
+
+
+/**
+* Radio and Checkbox
+* In the markup, the input should come first before the lable (source order), other the adjacent sibling selector below will not work
+*/
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+
+  position: relative;
+  left: 28px; // 1 push right
+
+  &::before {
+    position: absolute;
+    left: -28px; // 1 push back left
+    content: "";
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border: 2px solid $color-primary;
+  }
+
+  &::after {
+    position: absolute;
+    left: -28px;
+    top: 48%;
+    content: "";
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    background-color: $color-primary;
+    transform: translate(28%, -48%);
+    opacity: 0; // 2 hide it till checked
+    transition: opacity .2s;
+  }
+}
+
+input[type="radio"] + label {
+  &::before{
+    border-radius: $border-radius-large;
+  }
+  &::after{
+    border-radius: $border-radius-large;
+  }
+}
+
+input[type="checkbox"]:checked + label::after,
+input[type="radio"]:checked + label::after {
+  opacity: 1; // 2 show it
+}
+
+// Hide the radio and checkbox input element
+input[type="checkbox"],
+input[type="radio"] {
+  @include visuallyhidden;
+}
+
+
+
+/**
+* Select
+* 1. To gain control over the appearance on and Trident (IE)
+* 2. To gain control over the appearance on WebKit/Chromium
+* 3. To gain control over the appearance on Gecko
+     Note that it also works on Gecko and has partial effects on WebKit
+*/
+select {
+  > option {
+  padding: 3px;
+  background : none; // 1
+  -webkit-appearance: none; // 2
+  -moz-appearance: none; // 3
+  }
+}
+
+
+
+/**
+* Textarea
+*/
+textarea {
+  min-height: 8em;
+  padding: $field-padding;
+  vertical-align: top;
+  overflow: auto;
+  resize: none;
+}

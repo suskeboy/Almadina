@@ -1,0 +1,40 @@
+@import '../configs/variables';
+
+/**
+* A seamless form that has only a border bottom and no visible label
+*
+*/
+.form-seamless {
+
+  &__group {
+    margin-bottom: $scale/2;
+  }
+
+  &__label {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  &__input {
+    border-bottom: 2px solid transparent;
+    &:focus {
+     border-color: $color-primary;
+    }
+    &:focus:invalid {
+     border-color: $color-error;
+    }
+  }
+
+  &__input:placeholder-shown + &__label {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder {
+  color: $base-text-color;
+  
+}

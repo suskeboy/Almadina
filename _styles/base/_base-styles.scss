@@ -1,0 +1,146 @@
+@import '../configs/variables'; 
+
+/**
+* HTML5 structural elements to display correctly (IE10, older browsers)
+* TODO: will get rid of this soon, my audience still use old browsers
+*/
+article, 
+aside, 
+dialog, 
+figcaption, 
+figure, 
+footer, 
+header, 
+main, 
+nav, 
+section {
+  display: block;
+}
+
+
+
+pre,
+p {
+  margin: 0;
+  &:not(:last-child) {
+    margin-bottom: $scale*2;
+  }
+}
+
+address {
+  margin-bottom: $scale*2;
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 0 0 $scale*2 $scale;
+}
+
+blockquote::before {
+  content: '"';  /* <-- look for a html char entity for a nice quote mark and use that here */
+  float: left;
+  font-size: $scale*2;
+  line-height: 1;
+}
+
+blockquote > p,
+blockquote > cite {
+  padding-left: $scale;
+}
+
+blockquote > cite {
+  font-style: italic;
+}
+
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ *
+ * Attribution :: normalize CSS Project
+ */
+abbr[title] {
+  border-bottom: none; // 1
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+}
+
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ *
+ * Attribution :: normalize CSS Project
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ *
+ * Attribution :: normalize CSS Project
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; // 1
+  font-size: .875rem; // 2
+}
+
+pre {
+  padding: $scale;
+  border: $gray-border;
+  border-radius: $border-radius-small;
+  overflow: auto;
+  background-color: $gray-light;
+  color: $black;
+}
+
+
+/**
+ * Add the correct font size in all browsers.
+ *
+ * Attribution :: normalize CSS Project
+ */
+figcaption,
+small {
+  font-size: 80%;
+}
+
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+ *
+ * Attribution :: normalize CSS Project
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+    padding: 0;
+    margin: 3em 0;
+    overflow: visible;
+     box-sizing: content-box;
+}

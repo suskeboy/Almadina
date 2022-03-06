@@ -1,0 +1,28 @@
+@import '../configs/variables'; 
+
+/**
+*  HTML Links 
+* 1. Remove the gray background on active links in IE 10.
+*/
+a {
+
+  background-color: transparent; // 1
+  color: $base-link-color;
+  text-decoration: underline;
+  transition: all 0.2s;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    color: darken($color-primary, 20%);
+  }
+   
+}
+
+/* external links */
+[href^="http"]::after { // find out about this ^ or $ and ~ 
+  content: '⤴';
+}
+

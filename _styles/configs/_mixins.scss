@@ -1,0 +1,98 @@
+/**
+* Clearfix 
+*/
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+// All releated mixing that has to do with a specific component,
+// put that mixing on top of that component in the component file,
+// you do not need that mixing the global mixin
+// same goes for varible names as well
+
+// Use extend for only related selectors only or only related rules 
+
+// Example mixing for a color of links or buttons or alerts and so on
+/* usage of the above mxin 
+nav a {
+  @include style-link-text(blue);
+}
+button {
+  @include style-link-text(red);
+}
+*/
+@mixin style-link-text($color) {
+  text-decoration: none;
+  color: $color;
+}
+
+
+
+
+
+
+/**
+* Breakpoint graph, base on major breakpoints by several devices
+*
+* 0 - 600px => phone
+* 600px - 900px => tablet portrait
+* 900px - 1200px => tablet landscape
+* 1200px - 1800px => desktop
+* 1800px + => large desktop
+*/
+
+// Breakpoints base on 1em = 16px
+$tablet-portrait:       37.500em; // 600px
+$tablet-landscape:      56.250em; // 900px
+$desktop:               75.000em; // 1200px 
+$desktop-large:         112.500em; // 1800px
+
+
+@mixin respond($breakpoint) {
+  
+  @if $breakpoint == tablet-portrait {
+    @media (min-width: $tablet-portrait) { @content };
+  }
+
+  @if $breakpoint == tablet-landscape {
+    @media (min-width: $tablet-landscape) { @content };
+  }
+
+  @if $breakpoint == desktop {
+    @media (min-width: $desktop) { @content };
+  }
+
+  @if $breakpoint == desktop-large {
+    @media (min-width: $desktop-large) { @content };
+  }
+}
+
+
+
+
+/* H5BP hidden helper classes - Thanks to H5BP dev community and team
+========================================================================== */
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ keyboard:https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; // 1
+}       

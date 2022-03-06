@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="column is-1-of-3">
+      <div>
+        <b>Gambia Office</b>
+        <address>
+          New Town, Brikama<br />
+          Kombo Central, <br />
+          West Coast Region <br />
+          The Gambia <br />
+          Wats App: +220 342 1750 <br />
+          Registered Company No. 0911421846
+        </address>
+      </div>
+    </div>
+
+    <div class="column is-1-of-3">
+      <div>
+        <b>Senegal Office</b>
+        <address>
+          Ouest Foire, <br />
+          Cite Mame Rane <br />
+          Dakar, Senegal <br />
+          Tel: (+221) 773612738 <br />
+          N.I.N.E.A: 00 6735908 - Registered Company No <br />
+          SN. DKR. 2018.6040
+        </address>
+      </div>
+    </div>
+
+    <div class="column is-1-of-3">
+      <div>
+        <ul class="nav__list">
+          {% assign menuItems = site.data.main-menu | sort: 'order' %} {% for
+          item in menuItems %}
+          <li>
+            <a
+              class="{% if item.url == page.url %} is-active {% endif %}"
+              href="{{ item.url }}"
+              title="{{ item.title }}"
+              >{{ item.title }}</a
+            >
+          </li>
+          {% endfor %}
+          <li>
+            <a href="{{ site.web_mail }}">Webmail &rarr;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="u-align-right">
+    <small>
+      <small
+        >© copyright - Al-madina Import, Export and Real Estate Company Ltd.
+      </small>
+    </small>
+  </div>
+</div>
+
+

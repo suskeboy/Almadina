@@ -1,0 +1,35 @@
+@import '../configs/variables'; 
+@import '../configs/mixins'; 
+
+/**
+* Site wrapper
+* 
+*/
+.wrapper {
+  max-width: $wrapper-max-width;
+  min-width: $wrapper-min-width;
+}
+
+/**
+* Container
+* 
+*/
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $scale;
+  @include respond(desktop) {
+    padding: 0 $scale*2;
+  }
+}
+
+
+.container-main {
+    padding-top: $scale*4;
+    padding-bottom: $scale*4;
+
+  @include respond(desktop) {
+    padding-top: $scale*8;
+    padding-bottom: $scale*8;
+  }
+}

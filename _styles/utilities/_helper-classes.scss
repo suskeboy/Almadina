@@ -1,0 +1,97 @@
+// Global variable
+@import '../configs/variables'; 
+
+// local variables
+$unit: $scale;
+
+/**
+* Helper Classes:
+* This contain small/single reusable classes that can be use in the project to maintain DRY in various other css files
+*/
+
+
+// Alignments and block
+.u-align-center { text-align: center; }
+.u-align-right { text-align: right; }
+.u-block { display: block; }
+
+
+
+/**
+* Center element or block horizontally and vertically
+* 1. make sure to set position relative on the parent element
+* 2. set the element or block at the center of the parent
+*/ 
+.u-center-vh {
+  position: absolute; // 1
+  top: 50%; // 2
+  left: 50%; // 2
+  transform: translate(-50%, -50%); // 2
+  width: 100%;
+}
+
+.u-flex-center-vh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+/**
+* Positions
+*/ 
+ .pos-rel { position: relative; }
+
+
+
+// White spacers
+.u-margin-all-small           { margin: $unit/2; }
+.u-margin-all-medium          { margin: $unit*2; }
+.u-margin-all-large           { margin: $unit*4; }
+
+.u-margin-top-small           { margin: $unit/2; }
+.u-margin-top-medium          { margin: $unit*2; }
+.u-margin-top-large           { margin: $unit*4; }
+
+.u-margin-bottom-small        { margin: $unit/2; }
+.u-margin-bottom-medium       { margin: $unit*2; }
+.u-margin-bottom-large        { margin: $unit*4; }
+
+.u-margin-top-bottom-small    { margin: $unit/2; }
+.u-margin-top-bottom-medium   { margin: $unit*2; }
+.u-margin-top-bottom-large    { margin: $unit*4; }
+
+// paddings
+.u-padding-all-small           { padding: $unit/2; }
+.u-padding-all-medium          { padding: $unit*2; }
+.u-padding-all-large           { padding: $unit*4; }
+
+.u-padding-top-small           { padding: $unit/2; }
+.u-padding-top-medium          { padding: $unit*2; }
+.u-padding-top-large           { padding: $unit*4; }
+
+.u-padding-bottom-small        { padding: $unit/2; }
+.u-padding-bottom-medium       { padding: $unit*2; }
+.u-padding-bottom-large        { padding: $unit*4; }
+
+.u-padding-top-bottom-small    { padding: $unit/2; }
+.u-padding-top-bottom-medium   { padding: $unit*2; }
+.u-padding-top-bottom-large    { padding: $unit*4; }
+
+
+/*
+ * HTML5BP
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+    visibility: hidden;
+}
+
+.desktop {
+  display: none;
+  visibility: hidden;
+}

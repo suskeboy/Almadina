@@ -1,0 +1,53 @@
+@import '../configs/variables';
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $white;
+
+  > span {
+    margin-left: $scale;
+  }
+  &__text {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 22px;
+      height: 3px;
+      background-color: $gray-dark;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      transition: all .2s;
+    }
+
+    &::before { top: -6px}
+    &::after { top: 6px}
+  }
+
+  &:hover &__icon::before { top: -7px}
+  &:hover &__icon::after { top: 7px}
+
+@include respond(desktop) {
+  display: none;
+}
+
+}

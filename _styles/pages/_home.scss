@@ -1,0 +1,41 @@
+@import '../configs/variables'; 
+@import '../configs/mixins'; 
+
+.section {
+
+  padding: $scale*4 0;
+
+  @include respond(desktop) {
+    padding: $scale*8 0;
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .h2 {
+    margin-bottom: 1em;
+  }
+}
+
+
+// Modifiers
+.section--services {
+  background-color: $gray-lighter;
+}
+.section--about {
+  background-color: $white;
+}
+
+.section--products {
+  background-color: #526f8e;
+
+  h2 {
+    color: $white;
+  }
+}
+
+
+.section--team {
+  background-color: #ebebeb;
+ }

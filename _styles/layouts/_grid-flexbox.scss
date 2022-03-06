@@ -1,0 +1,112 @@
+@import '../configs/variables'; 
+@import '../configs/mixins';
+
+/**
+*  Grid listing of items, an infinite one could be any amount of items
+* 
+*/
+.row {
+  margin-top: -$scale;
+
+  @include respond(tablet-portrait)  {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    margin-left: -$scale;
+  }
+
+  @include respond(desktop)  {
+    margin-left: -$scale*2;
+  } 
+}
+
+
+
+.column {
+
+  padding-top: $scale;
+
+  @include respond(tablet-portrait)  {
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    
+    padding-left: $scale;
+
+    > * {
+      flex: none;
+      width: 100%;
+    }
+    
+  }
+
+  @include respond(desktop)  {
+    padding-top: $scale*2;
+    padding-left: $scale*2;
+  }
+}
+
+
+
+.is-1-of-2 {
+  @include respond(tablet-portrait)  {
+    flex-basis: 50%;
+    max-width: 50%;
+  } 
+  
+}
+
+.is-1-of-3 {
+
+  @include respond(tablet-portrait)  {
+    flex-basis: 33.33330%;
+    max-width: 33.3333%;
+  }
+  
+}
+
+.is-1-of-4 {
+
+  @include respond(tablet-portrait)  {
+    flex-basis: 25%;
+    max-width: 25%;
+  }  
+ 
+}
+
+.is-1-of-5 {
+
+  @include respond(tablet-portrait)  {
+    flex-basis: 20%;
+    max-width: 20%;
+  }  
+  
+}
+
+.is-2-of-3 {
+
+  @include respond(tablet-portrait)  {
+    flex-basis: 66.6666%;
+    max-width: 66.6666%;
+  }  
+  
+}
+
+.is-3-of-4 {
+
+  @include respond(tablet-portrait)  {
+    flex-basis: 75%;
+    max-width: 75%;
+  }  
+  
+}
+
+.is-3-of-5 {
+
+  @include respond(tablet-portrait)  {
+    flex-basis: 60%;
+    max-width: 60%;
+  }  
+  
+}
+

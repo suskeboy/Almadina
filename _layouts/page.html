@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+
+  <div id="top" class="wrapper" role="document">
+
+    <header class="site-header" role="banner">
+      {% include header.html %}
+    </header>
+
+    <div class="banner">
+      <img src="images/banner/bn1.jpg" alt="Banner image">
+    </div>
+
+    <main role="main">
+      
+      <div class="container container-main">
+         {{ content }}
+      </div>
+
+    </main>
+
+
+    <footer class="site-footer" role="contentinfo">
+      {% include footer.html %}
+    </footer>
+
+  </div>
+
+  {% include whatsapp.html %}
+
+  <script src="scripts/vendor/jquery-1.11.1.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

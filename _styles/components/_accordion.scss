@@ -1,0 +1,42 @@
+@import '../configs/variables';
+
+.accordion {
+
+  border-radius: $border-radius-small;
+  box-shadow: $box-shadow-light;
+
+  &:not(:last-child) {
+    margin-bottom: $scale;
+  }
+
+  &__title {
+    padding: .5em;
+  }
+
+  &__content {
+    padding: $scale;
+  }
+
+
+  &__title {
+
+    background-color: $gray-light;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $gray;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__content {
+    background-color: $white;
+
+    @include respond(desktop) {
+      padding: $scale*2;
+    }
+  }
+}

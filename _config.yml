@@ -1,0 +1,24 @@
+# Site settings
+title: Al-Madina Import & Export Company and Real Estate Agency
+email: info@almadina.gm
+description: Al-Madina is a solution oriented company in Import and Export and Real Estate Agency. With its headquarters in Brikama New Town, The Gambia, Al-Madina provides goods and services with a clear mindset lasting partnership with the customer party. Our goal is to counter every challenge in your efforts to gain satisfaction in the two ends of domestic and business structures.
+baseurl: ""
+url: "" # the base hostname & protocol for your site
+web_mail: https://s217085.gridserver.com/.tools/webmail/
+facebook_id: http://facebook.com
+
+# Collections
+collections:
+  products:
+    output: true
+
+
+
+# General settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  sass_dir: _styles
+  style: :compressed

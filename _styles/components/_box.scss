@@ -1,0 +1,42 @@
+@import '../configs/variables';
+@import '../configs/mixins';
+
+  // <!-- the box component -->
+  // <!-- 
+
+  //   These boxes is now where you will have simple box
+  //   a box with box shadow
+  //   a box will color
+  //   a box that flip
+  //   and so 
+  //   and they could be applied to many other compoonents like cards boxes themselves and other things
+  //  -->
+
+  .box {
+    padding: $scale;
+    border-radius: $border-radius-medium;
+    background-color: $white;
+    box-shadow: $box-shadow-light;
+    
+    @include respond(desktop) {
+      padding: $scale*2;
+    }
+}
+
+
+// Modifiers
+.box--bordered {
+  border: $gray-border;
+}
+
+
+.box--transform-move-up {
+  @include respond(desktop) {
+    transition: transform .3s;    
+  }
+  &:hover {
+     @include respond(desktop) {
+      transform: translateY(-1rem) scale(1);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* composition photo component */
+.composition {
+  position: relative; 
+}
+
+.composition__img {
+    position: absolute;
+    width: 60%;
+    box-shadow: 0  15px 30px rgba(0, 0, 0, .5);
+    z-index: 10;
+    transition: all .2s;
+}
+
+.composition__img:hover {
+  transform: scale(1.05) translateY(-.5px) ;
+  
+  box-shadow: 0 30px 30px rgba(0, 0, 0, .7);
+  z-index: 20;
+}
+
+.composition:hover .composition__img:not(:hover) {
+  transform: scale(.9)
+}
+
+.composition__img--img-1 {
+  left: 0;
+  top: -2rem;
+}
+
+.composition__img--img-2 {
+  right: 0;
+  top: 2rem;
+}
+
+.composition__img--img-3 {
+  left: 20%;
+  top: 6rem;
+}

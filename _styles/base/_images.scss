@@ -1,0 +1,38 @@
+@import '../configs/variables'; 
+
+/**
+* HTML Images
+* 1. This will make all images to be responsive 
+* 2. Remove the border on images inside links in IE 10. Attribution :: normalize CSS Project 
+*/
+img {
+  max-width: 100%; // 1
+  height: auto;  // 1
+  border-style: none; // 2
+}
+
+figure {
+  margin: 0;
+  margin-bottom: $scale*2;
+}
+
+
+
+.avatar {
+  display: inline-block !important;
+  height: 200px;
+  width: 200px; }
+  .avatar--circle {
+    border-radius: 100%; }
+  .avatar--hexagon {
+    -webkit-clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+    clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0); }
+  .avatar--octagon {
+    -webkit-clip-path: polygon(33.33% 0%, 66.66% 0%, 100% 33.33%, 100% 66.66%, 66.66% 100%, 33.33% 100%, 0 66.66%, 0 33.33%);
+    clip-path: polygon(33.33% 0%, 66.66% 0%, 100% 33.33%, 100% 66.66%, 66.66% 100%, 33.33% 100%, 0 66.66%, 0 33.33%); }
+  .avatar.is-medium {
+    width: 150px;
+    height: 150px; }
+  .avatar.is-large {
+    width: 250px;
+    height: 250px; }

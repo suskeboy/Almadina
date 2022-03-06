@@ -1,0 +1,23 @@
+@import '../configs/variables'; 
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: $scale*2;
+  padding-left: $scale*2;
+}
+
+ol ol,
+ul ul { 
+  margin-bottom: 0;
+}
+
+dl {
+  padding-left: 0;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}

@@ -1,0 +1,23 @@
+- title: Home
+  url: index.html
+  order: 1
+
+- title: About
+  url: about.html
+  order: 2
+
+- title: Services
+  url: services.html
+  order: 3
+
+- title: Products
+  url: products.html
+  order: 4
+
+- title: Our Team
+  url: team.html
+  order: 5
+
+- title: Contact
+  url: contact.html
+  order: 6

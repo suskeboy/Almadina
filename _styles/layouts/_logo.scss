@@ -1,0 +1,25 @@
+.logo {
+  color: $white;
+  padding: $scale*2;
+  font-weight: 700;
+}
+
+
+.logo--mobile {
+  @include respond(desktop) {
+    display: none;
+  }
+}
+
+.logo--desktop {
+  display: none;
+  @include respond(desktop) {
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 230px;
+    height: 200px;
+    z-index: 10;
+  }
+}

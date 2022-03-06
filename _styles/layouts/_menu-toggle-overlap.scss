@@ -1,0 +1,55 @@
+@import '../configs/variables';
+
+.menu-toggle-overlap {
+
+  outline: 1px solid red;
+  display: inline-block;
+  cursor: pointer;
+
+  input { display: none; }
+
+  &__icon-line {
+
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 22px;
+      height: 3px;
+      background-color: $gray-dark;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      transition: all .2s;
+    }
+
+    &::before { top: -7px}
+    &::after { top: 7px}
+  }
+
+  &:hover &__icon-line::before { top: -8px}
+  &:hover &__icon-line::after { top: 8px}
+
+
+  &__icon > input[type="checkbox"]:checked + &__icon-line {
+    background-color: transparent;
+  }
+
+  &__icon > input[type="checkbox"]:checked + &__icon-line::before {
+    top: 0;
+   transform: rotate(45deg);
+  }
+
+  &__icon > input[type="checkbox"]:checked + &__icon-line:after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}

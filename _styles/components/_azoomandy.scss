@@ -1,0 +1,55 @@
+// Global variable
+@import '../configs/variables'; 
+@import '../configs/mixins'; 
+
+// local variables
+$unit: $scale;
+
+/**
+* azoomandy
+* azoomandy is hiding the the caption of an image, showing on hover, bluring the image and zooming it inside
+* 1. center the element horizontally
+* 2. center the element both horizontally and vertically 
+* 3. zoom out the img up by scaling it so that when hovered you can zoom in  
+ */ 
+
+  @include respond(desktop) {
+    .azoomandy {
+      position: absolute; 
+      left: 50%; // 1
+      bottom: $scale;
+      transform: translateX(-50%); // 1
+      opacity: 0; 
+      transition: all .5s;
+      backface-visibility: hidden;  
+    }
+
+    .azoomandy-container {
+
+      position: relative;
+
+      > figure {
+        position: relative;
+        &:hover > .azoomandy {
+          opacity: 1;
+          bottom: 50%; // 2
+          transform: translate(-50%, 50%); // 2
+        }
+
+        > img {
+          transform: scale(1.1); // 3
+          transition: all .5s;
+        }
+
+        &:hover > img {
+          transform: scale(1); // 3
+          filter: blur(3px) brightness(80%);
+        }
+
+      }
+    }
+  }
+
+
+
+

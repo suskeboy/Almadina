@@ -1,0 +1,11 @@
+@import '../configs/variables';
+
+/**
+* Background Gradient
+*/
+.bg-gradient {
+  background-image: linear-gradient(to right bottom, $color-primary,$color-primary-dark);
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+

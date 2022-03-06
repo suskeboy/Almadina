@@ -1,0 +1,36 @@
+@import '../configs/variables';
+
+
+.table {
+
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: $gray-border;
+
+  background-color: $white; 
+  box-shadow: $box-shadow-light;
+
+  th {
+    text-align: left;
+    background-color: $gray;
+  }
+
+  th,
+  td {
+    padding: .422em;
+    border: $gray-border;
+  }
+
+}
+
+
+
+// Modifiers
+
+.table--compact {
+  th,
+  td {
+  	padding: .1em;
+  }
+}

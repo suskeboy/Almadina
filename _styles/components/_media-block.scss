@@ -1,0 +1,69 @@
+@import '../configs/variables';
+@import '../configs/mixins';
+
+/**
+* The media object
+* Using floats
+*/
+.media {
+  @include clearfix;
+
+  &__hero {
+    float: left;
+    margin-right: $scale;
+  }
+
+  &__hero--alternate {
+    float: right;
+    margin-left: $scale;
+  }
+
+  &__img {
+    display: block;
+  }
+
+  &__caption {
+    color: $white;
+  }
+
+  &__info {
+    overflow: hidden;
+    padding: $scale;
+  }
+}
+
+/**
+* The media object
+* Using Flexbox
+*/
+/* 
+.block {
+  display: flex;
+  align-items: flex-start;
+  background: #333;
+  padding: 1rem;
+  max-width: 20rem;
+  margin: 0 0 1rem 0;
+}
+.block > img {
+  width: 75px;
+  margin: 0 1rem 0 0;
+}
+.block > div {
+  flex: 1;
+}
+.block h2 {
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+Note that we're allowing the <img> to become a flex item. We used align-items: flex-start; to make sure it doesn't stretch out to the same height as the text.
+*/
+
+
+/**
+* The media object, A responsive one for big ones
+* Using Flexbox
+*/
+
+

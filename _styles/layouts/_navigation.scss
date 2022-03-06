@@ -1,0 +1,139 @@
+@import '../configs/variables';
+
+// General style for all navigation
+.nav {
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px ;
+    color: $base-text-color;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+
+// top menu
+.top-menu {
+  font-size: 14px;
+  box-shadow: $box-shadow-light;
+  > .container {
+    display: flex;
+    align-items: center;
+    padding-top: $scale;
+    padding-bottom: $scale;
+  }
+}
+
+.top-menu__contacts {
+  margin-right: auto;
+
+  &.is-hidden {
+    display: none;
+  }
+
+  @include respond(desktop) {
+    &.is-shown {
+      display: block;
+    }
+  }
+}
+
+
+// mobile menu
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  background-color: $color-primary;
+
+  > div {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: $scale;
+  }
+}
+
+
+
+
+
+
+
+
+// main menu
+.main-menu {
+  background-color: $color-primary;
+}
+
+
+.main-menu__list {
+
+  display: none;
+
+  a {
+    padding: $scale*2;
+    color: $white;
+    display: block;
+
+    &:hover,
+    &.is-active {
+      background-color: lighten($color-primary, 15%);
+    }
+
+    &::first-child {
+      position: relative;
+    }
+  }
+  
+  @include respond(desktop) {
+    
+    display: flex;
+
+    > li {
+
+      &:first-child {
+        margin-right: auto;
+      }
+    }
+  }
+
+}
+
+
+
+/*  
+* Horizonttal navigation list
+*/
+.nav-list-p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-shadow: inset 0 -2px 0 #e5e8ed;
+  box-shadow: inset 0 -2px 0 #e5e8ed; }
+
+.nav-list-p__link {
+  display: inline-block;
+  padding: 1em;
+  font-size: 14px;
+  text-decoration: none;
+  color: $black;
+  border-bottom: 3px solid transparent !important;
+   }
+  .nav-list-p__link:hover {
+    color: #3a7b11;
+    background-color: #e1f7d5; }
+  .nav-list-p__link.is-active {
+    border-bottom-color: #3a7b11 !important;
+    color: #3a7b11; }
+
+
+

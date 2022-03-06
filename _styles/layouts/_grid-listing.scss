@@ -1,0 +1,52 @@
+@import '../configs/variables'; 
+@import '../configs/mixins';
+
+/**
+*  Grid listing of items, an infinite one could be any amount of items
+* 
+*/
+.listing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  margin-top: -$scale;
+
+  @include respond(tablet-portrait)  {
+    margin-left: -$scale;
+  }
+
+  @include respond(desktop)  {
+    margin-left: -$scale*2;
+  }
+
+  &__item {
+
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: $scale;
+
+    > * {
+      flex: none;
+      width: 100%;
+    }
+
+    @include respond(tablet-portrait)  {
+      flex-basis: 50%;
+      max-width: 50%;
+      padding-left: $scale;
+    }
+
+    @include respond(desktop)  {
+      flex-basis: 25%;
+      max-width: 25%;
+      padding-top: $scale*2;
+      padding-left: $scale*2;
+    }
+  }
+}

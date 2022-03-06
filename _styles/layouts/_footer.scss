@@ -1,0 +1,13 @@
+.site-footer {
+    padding: $scale*4;
+    background-color: $color-primary;
+     color: $white;
+
+    a {
+        color: $white;
+    }
+
+  @include respond(desktop) {
+    padding: $scale*8 0;
+  }
+}

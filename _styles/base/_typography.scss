@@ -1,0 +1,121 @@
+@import '../configs/variables'; 
+@import '../configs/mixins'; 
+
+/**
+* Inherit from body and apply to all real, after and before elements to have box-sizing border box
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+
+/**
+* 1. Set the default root font size that defines what 1rem should be
+* 2. Prevent adjustments of font size after orientation changes in iOS.
+* Attribution for 2 :: normalize CSS Project
+*/
+html {
+
+  font-size: $root-font-size-small; 
+  -webkit-text-size-adjust: 100%;
+
+  @include respond(tablet-portrait) {
+    font-size: $root-font-size-medium; 
+  }
+
+  @include respond(desktop-large) {
+    font-size: $root-font-size-large; 
+  }
+}
+
+
+
+/**
+* Typo 
+* 1. Remove the defaul margin applied by browsers
+* 2. Alters the box model so that any border or padding property values are included within the width and height of an element.
+*/
+body {
+  margin: 0; // 1
+  box-sizing: border-box; // 2
+  background-color: $base-background-color;
+  color: $base-text-color;
+  font-family: $base-typeface;
+  line-height: $base-line-height;
+}
+
+
+
+/**
+*  Heading and Paragraphs
+*/
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-family: $heading-typeface;
+  color: $base-heading-color;
+}
+
+h1,
+.h1 {
+  font-size: 1.8em;
+  margin-bottom: .5em;
+  line-height: 1.5em;
+}
+
+h2,
+.h2 {
+  font-weight: 700;
+  font-size: 1.688em;
+  line-height: 1.344em;
+}
+
+h3,
+.h3 {
+  font-weight: 600;
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+
+h4,
+.h4 {
+  font-weight: 600;
+  font-size: 1.2em;
+  line-height: 1.688em;
+}
+
+h5,
+h6,
+.h5,
+.h6 {
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.688em;
+  
+}
+
+.lead-paragraph {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-weight: 400;
+  margin-bottom: 1em;
+
+  &--bordered {
+    padding-top: .5em; 
+    padding-bottom: .5em; 
+    border-top: 2px solid $color-primary;
+    border-bottom: 2px solid $color-primary;
+  }
+}
+
+
+// Text color alternate
+.txt-color-muted { color: $base-text-color-muted; }

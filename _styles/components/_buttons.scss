@@ -1,0 +1,53 @@
+@import '../configs/variables'; 
+@import '../configs/mixins'; 
+
+
+/* Buttons */
+.btn  {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 13.5px $button-and-form-field-height-small;
+  border: 0;
+  border-radius: $border-radius-small;
+  overflow: visible;
+  font: inherit;
+  font-size: 14px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+
+
+// modifiers
+.btn--normal {
+  border: $gray-border;
+}
+
+.btn--primary {
+
+  background-color: #607D8B;
+  color: $white;
+
+  &:hover {
+    background-color: darken(#607D8B, 15%);
+    transform: translateY(-.3rem);
+    box-shadow: $box-shadow-medium;
+  }
+}
+
+/* Button hover effects */
+.btn:hover {
+  
+}
+
+
+
+
+
+
+
+/* Button modifyers */
+.btn--link {
+  text-decoration: none;
+}

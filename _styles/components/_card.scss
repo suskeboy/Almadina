@@ -1,0 +1,24 @@
+@import '../configs/variables'; 
+@import '../configs/mixins'; 
+
+.card {
+  
+  border-radius: $border-radius-medium;
+  background-color: $white;
+  box-shadow: $box-shadow-light;
+  padding: $scale;
+  border: $gray-border;
+
+  &__hero {
+    margin: 0;
+  }
+
+  &__details {
+
+    padding: $scale;
+
+    @include respond(desktop) {
+      padding: $scale $scale*2;
+    }
+  }
+}

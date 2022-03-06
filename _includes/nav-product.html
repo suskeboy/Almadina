@@ -1,0 +1,8 @@
+
+<nav class="nav-list-p">
+  <div class="container">
+       {% assign nav = site.products | sort: "order" %} {% for p in nav %}
+      <a class="nav-list-p__link {% if p.url == page.url %} is-active {% endif %}" href="{{ p.url }}">{{ p.title }}</a>
+      {% endfor %}
+  </div>
+</nav>
