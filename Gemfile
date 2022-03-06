@@ -8,7 +8,8 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 4.1.0"
-
+gem "capistrano", '~> 3.11'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 # official plugins
 group :jekyll_plugins do
   gem 'jekyll-sitemap'
