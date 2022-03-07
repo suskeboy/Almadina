@@ -36,6 +36,8 @@ namespace :deploy do
     %x(rm -rf _site/* && jekyll build && rm _site/Capfile && rm -rf _site/config)
   end
 
+end
+
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
 
