@@ -33,7 +33,7 @@ set :branch, "main"
 #     end
 #   end
 
-end
+# end
 
 after "deploy:symlink:release" do
   run "rm -rf #{release_path}/config #{release_path}/Capfile"

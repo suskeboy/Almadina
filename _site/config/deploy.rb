@@ -37,7 +37,7 @@ end
 
 after "deploy:symlink:release" do
   run "rm -rf #{release_path}/config #{release_path}/Capfile"
-  run "cd #{release_path} && jekyll build"
+  run "cd #{release_path} && bundle exec jekyll build"
 end
 
 # Default value for :linked_files is []
