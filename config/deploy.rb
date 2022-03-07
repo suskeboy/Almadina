@@ -24,18 +24,21 @@ set :branch, "main"
 
 # Default value for :pty is false
 # set :pty, true
-namespace :deploy do
-  task :update_jekyll do
-    on roles(:app) do
-      within "#{deploy_to}/current" do
-      	%x(rm -rf _site/* && jekyll build && rm _site/Capfile && rm -rf _site/config)
-      end
-    end
-  end
+# namespace :deploy do
+#   task :update_jekyll do
+#     on roles(:app) do
+#       within "#{deploy_to}/current" do
+
+#       end
+#     end
+#   end
 
 end
 
-after "deploy:symlink:release", "deploy:update_jekyll"
+after "deploy:symlink:release" do
+  run "rm -rf #{release_path}/config #{release_path}/Capfile"
+  run "cd #{release_path} && jekyll build"
+end
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
