@@ -4,7 +4,7 @@ lock "~> 3.16.0"
 set :application, "almadina"
 set :repo_url, "git@github.com:suskeboy/Almadina.git"
 set :scm, :git
-
+set :deploy_to, "/home/almadina/#{fetch :application}"
 set :format, :pretty
 # set :user, "almadina"
 
