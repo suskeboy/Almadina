@@ -20,10 +20,21 @@ set :repo_url, "git@github.com:suskeboy/Almadina.git"
 
 # Default value for :pty is false
 # set :pty, true
-after "deploy:create_symlink" do
-  run "rm -rf #{release_path}/config #{release_path}/Capfile"
-  run "cd #{release_path} && jekyll build"
-end
+before 'deploy:update', 'deploy:update_jekyll'
+
+namespace :deploy do
+  [:start, :stop, :restart, :finalize_update].each do |t|
+    desc "#{t} task is a no-op with jekyll"
+    task t, :roles => :app do ; end
+  end
+
+  desc 'Run jekyll to update site before uploading'
+  task :update_jekyll do
+    # clear existing _site
+    # build site using jekyll
+    # remove Capistrano stuff from build
+    %x(rm -rf _site/* && jekyll build && rm _site/Capfile && rm -rf _site/config)
+  end
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
