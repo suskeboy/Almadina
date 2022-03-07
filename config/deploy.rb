@@ -6,6 +6,7 @@ set :repo_url, "git@github.com:suskeboy/Almadina.git"
 set :scm, :git
 set :deploy_to, "/home/almadina/#{fetch :application}"
 set :format, :pretty
+set :branch, "main"
 # set :user, "almadina"
 
 # Default branch is :master
