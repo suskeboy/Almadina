@@ -28,8 +28,7 @@ namespace :deploy do
   task :update_jekyll do
     on roles(:app) do
       within "#{deploy_to}/current" do
-         run "rm -rf #{release_path}/config #{release_path}/Capfile"
-        run "cd #{release_path} && bundle exec jekyll build"
+      	execute :bundle, "exec jekyll build"
       end
     end
   end
